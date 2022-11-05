@@ -1,0 +1,9 @@
+version: '3'
+services:
+  univpn:
+    container_name: univpn
+    image: kvnnap/univpn:latest
+    build: .
+    restart: unless-stopped
+    volumes:
+      - ${PWD}/config:/etc/wireguard:ro
