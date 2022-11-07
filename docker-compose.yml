@@ -5,5 +5,7 @@ services:
     image: kvnnap/univpn:latest
     build: .
     restart: unless-stopped
+    cap_add:
+      - NET_ADMIN
     volumes:
       - ${PWD}/config:/etc/wireguard:ro
